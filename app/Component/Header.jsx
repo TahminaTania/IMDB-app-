@@ -13,7 +13,7 @@ export default function Header() {
                 <div className='px-5 text-2xl'><Link href={'/about'} className='flex'><p className='hidden sm:inline my-2'>About</p><span className='inline sm:hidden my-2'><AiOutlineInfoCircle/></span></Link></div>
             </div>
             <div className=' flex-1 pt-5 flex justify-end  '>
-                <ThemeChanger/>
+                <ThemeChanger/> {/* putting this on client side as using few hooks  */}
                 <div className='px-5 my-2 text-2xl'>LOGO.....</div>
             </div>
         </div>
