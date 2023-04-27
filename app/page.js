@@ -1,3 +1,6 @@
+import Link from "next/link";
+import SingleData from "./Movie/SingleData";
+
 const API_KEY=process.env.API_KEY
 
 export default async function Home({searchParams}) {
@@ -8,10 +11,11 @@ export default async function Home({searchParams}) {
   { next:{ revalidate:10000
   }});
 
-  // if(!res.ok){
-  //   throw new Error("Failed to Fetch Data")
-  // }
-  const data=await res.json();
+  if (!res.ok) {
+    throw new Error("Failed to fetch data"); // this will be caught by the error page and passed to the page as props
+  }
+
+   const data=await res.json();
    const result=data.results;
   console.log(result, "those are resultss...")
   return (
@@ -20,9 +24,9 @@ export default async function Home({searchParams}) {
       <div>
       {result.map((data)=>{
         return(
-          <div key={data.id}>
-          <p className="">{data.title}</p> 
-            </div>
+          <div key={data.id} >
+            <Link href={'/Movie/'+data.id}><SingleData  data={data}/></Link>
+          </div>
         )
       })
 
