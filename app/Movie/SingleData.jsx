@@ -5,7 +5,7 @@ import { MdOutlineThumbUpOffAlt} from 'react-icons/md';
 import Image from 'next/image';
 export default function SingleData({data}) {
   return (
-    <div className="cursor-pointer sm:p-3 sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sm:m-2 transition-shadow duration-200 group">
+    <div className="cursor-pointer xsm:p-3 xsm:hover:shadow-slate-400 xsm:shadow-md rounded-lg xsm:border xsm:border-slate-400 xsm:m-2 transition-shadow duration-200 group">
       <Image
         src={`https://image.tmdb.org/t/p/original/${
           data.backdrop_path || data.poster_path
@@ -21,7 +21,7 @@ export default function SingleData({data}) {
         blurDataURL="/spinner.svg"
         alt="image is not available"
       ></Image>
-      {/* <img src={data.backdrop_path || result.poster_path} width={200} height={200}/> */}
+     
       <div className="p-2">
         <p className="line-clamp-2 text-md">{data.overview}</p>
         <h2 className="truncate text-lg font-bold py-2">
