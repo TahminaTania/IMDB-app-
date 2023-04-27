@@ -21,12 +21,12 @@ export default async function Home({searchParams}) {
   return (
     <main className="">
       result
-      <div>
+      <div className=" xsm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mx-auto py-4">
       {result.map((data)=>{
         return(
-          <div key={data.id} >
-            <Link href={'/Movie/'+data.id}><SingleData  data={data}/></Link>
-          </div>
+
+            <Link href={'/Movie/'+data.id}><SingleData key={data.id} data={data}/></Link>
+
         )
       })
 
