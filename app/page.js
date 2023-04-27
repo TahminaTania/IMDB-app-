@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SingleData from "./Movie/SingleData";
+import Result from "./Result";
 
 const API_KEY=process.env.API_KEY
 
@@ -17,21 +18,14 @@ export default async function Home({searchParams}) {
 
    const data=await res.json();
    const result=data.results;
+
   console.log(result, "those are resultss...")
   return (
     <main className="">
-      result
-      <div className=" xsm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mx-auto py-4">
-      {result.map((data)=>{
-        return(
-
-            <Link href={'/Movie/'+data.id}><SingleData key={data.id} data={data}/></Link>
-
-        )
-      })
-
-      }
-      </div>
+    
+      
+       <Result result={result}/>
+    
     </main>
   )
 }
